@@ -71,7 +71,7 @@ class ProductToGiveControllerTests {
     }
 
     void testEdit() {
-        controller.edit()
+        controller.edit_product_to_give()
 
         assert flash.message != null
         assert response.redirectedUrl == '/productToGive/list'
@@ -84,7 +84,7 @@ class ProductToGiveControllerTests {
 
         params.id = productToGive.id
 
-        def model = controller.edit()
+        def model = controller.edit_product_to_give()
 
         assert model.productToGiveInstance == productToGive
     }

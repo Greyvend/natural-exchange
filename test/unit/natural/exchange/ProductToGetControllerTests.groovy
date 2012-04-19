@@ -30,7 +30,7 @@ class ProductToGetControllerTests {
     }
 
     void testCreate() {
-       def model = controller.create()
+       def model = controller.create_product_to_get()
 
        assert model.productToGetInstance != null
     }
@@ -71,7 +71,7 @@ class ProductToGetControllerTests {
     }
 
     void testEdit() {
-        controller.edit()
+        controller.edit_product_to_get()
 
         assert flash.message != null
         assert response.redirectedUrl == '/productToGet/list'
@@ -84,7 +84,7 @@ class ProductToGetControllerTests {
 
         params.id = productToGet.id
 
-        def model = controller.edit()
+        def model = controller.edit_product_to_get()
 
         assert model.productToGetInstance == productToGet
     }
