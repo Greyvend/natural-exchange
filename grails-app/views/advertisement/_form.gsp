@@ -1,5 +1,6 @@
 <%@ page import="natural.exchange.Advertisement" %>
 <%@ page import="natural.exchange.ProductToGet" %>
+<%@ page import="natural.exchange.ProductToGive" %>
 
 
 <div class="fieldcontain ${hasErrors(bean: advertisementInstance, field: 'exchanger', 'error')} required">
@@ -10,12 +11,12 @@
 	<g:select id="exchanger" name="exchanger.id" from="${natural.exchange.User.list()}" optionKey="id" required="" value="${advertisementInstance?.exchanger?.id}" class="many-to-one"/>
 </div>
 
-<div class="fieldcontain ${hasErrors(bean: advertisementInstance, field: 'placementDate', 'error')} ">
+<div class="fieldcontain ${hasErrors(bean: advertisementInstance, field: 'placementDate', 'error')} required">
 	<label for="placementDate">
 		<g:message code="advertisement.placementDate.label" default="Placement Date" />
-		
+		<span class="required-indicator">*</span>
 	</label>
-	<g:textField name="placementDate" value="${advertisementInstance?.placementDate}"/>
+	<g:datePicker name="placementDate" precision="day"  value="${advertisementInstance?.placementDate}"  />
 </div>
 
 <!-- 

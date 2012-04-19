@@ -36,7 +36,7 @@
 				<li class="fieldcontain">
 					<span id="placementDate-label" class="property-label"><g:message code="advertisement.placementDate.label" default="Placement Date" /></span>
 					
-						<span class="property-value" aria-labelledby="placementDate-label"><g:fieldValue bean="${advertisementInstance}" field="placementDate"/></span>
+						<span class="property-value" aria-labelledby="placementDate-label"><g:formatDate date="${advertisementInstance?.placementDate}" /></span>
 					
 				</li>
 				</g:if>
